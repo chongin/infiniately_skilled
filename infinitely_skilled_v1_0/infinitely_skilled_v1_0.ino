@@ -401,8 +401,8 @@ void setup(void) {
   while (!Serial)
     delay(10); // will pause Zero, Leonardo, etc until serial console opens
 
-  //setupLSM6DSOX();
-  setupADXL343();
+  setupLSM6DSOX();
+  //setupADXL343();
   setupMMC5983MA();
 
   Serial.print("Initializing SD card...");
@@ -412,7 +412,7 @@ void setup(void) {
   }
   Serial.println("Initialization done.");
 
-  tempsFile = SD.open("temps2.txt", FILE_WRITE);
+  tempsFile = SD.open("inf.txt", FILE_WRITE);
 
   if (tempsFile) {
     Serial.println("Printing temperatures");
@@ -429,10 +429,10 @@ void setup(void) {
 void loop() {
 
   //  /* Get a new normalized sensor event */
-  tempsFile = SD.open("temps2.txt", FILE_WRITE);
+  tempsFile = SD.open("inf.txt", FILE_WRITE);
   if (tempsFile) {
-    //writeLSM6DSOX();
-    writeADXL343();
+    writeLSM6DSOX();
+    //writeADXL343();
     writeMMC5983MA();
     tempsFile.close();
   }
