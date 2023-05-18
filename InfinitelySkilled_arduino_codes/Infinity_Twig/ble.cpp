@@ -72,10 +72,10 @@ void disconnect_callback(uint16_t conn_handle, uint8_t reason)
 void ble_init(struct twig_struct *twig)
 {
   pinMode(LED_RED, OUTPUT);
-  pinMode(LED_GREEN, OUTPUT);
+ // pinMode(LED_GREEN, OUTPUT);
 
   digitalWrite(LED_RED, HIGH);
-  digitalWrite(LED_GREEN, HIGH);
+  //digitalWrite(LED_GREEN, HIGH);
 
   _twig = twig;
 
